@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import './Section.css'
 import Arrow from '../img/down-arrow.svg';
+import Fade from 'react-reveal/Fade';
 
 function Section(props) {
     
@@ -11,14 +12,22 @@ function Section(props) {
         //Importing resources from css-files. S.C. is having problems.
         <Wrap className='background__image__1'>
 
+           
+           <Fade bottom>  
+       
             <ItemText>
                 <h1>{props.title}</h1>
 
                 <p>{props.description}</p>
             </ItemText>
+              </Fade>
+   
+
             
 
             <Buttons>
+
+            <Fade bottom> 
 
             <ButtonGroup>     
                 <LeftButton>
@@ -29,12 +38,19 @@ function Section(props) {
                 {props.rightBtnText}
                 </RightButton> 
             </ButtonGroup>
+
+             </Fade>
+            
             <DownArrow className = 'down__arrow'>
             <img src={Arrow}/>
             </DownArrow>
             
             </Buttons>
+           
+
         </Wrap>
+
+      
 
 
    
@@ -47,6 +63,9 @@ export default Section
 
 
 const Wrap = styled.div`
+
+z-index:10;
+
 width: 100vw; 
 height: 100vh;
 background-repeat: no-repeat;
