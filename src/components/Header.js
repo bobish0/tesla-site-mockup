@@ -6,7 +6,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 function Header() {
     
-    // Sets state for our burger-nav. checks if
+    // Sets state for our burger-nav. initial state false. 
     const[burgerState, setBurgerStatus] = useState(false);
     
     
@@ -26,15 +26,16 @@ function Header() {
         <RightMenu>
             <a href='#'>Shop</a>
             <a href='#'>Tesla Account</a>
-            <CustomMenu onclick={()=>setBurgerStatus(true)} />
+            <CustomMenu onClick={()=>setBurgerStatus(true)} />
         </RightMenu>
+            
+          
             <BurgerNav show = {burgerState}>
-                <CloseWrapper>
-                    <CustomClose>
-                    
-                    </CustomClose>
-                </CloseWrapper>
 
+                <CloseWrapper>
+                    <CustomClose onClick={()=>setBurgerStatus(false)} />     
+                </CloseWrapper>
+                
 
             <li><a href="#">Existing Inventory</a></li>
             <li><a href="#">Use Inventory</a></li>
@@ -121,7 +122,7 @@ display:flex;
 flex-direction:column;
 text-align:start; 
 transform: ${props => props.show ? 'translateX(0)': 'translateX(100%)'};
-
+transition: transform 0.2s;
 li{
     padding: 15px 0;
     border-bottom: 1px solid rgba(0,0,0, 0.2);
