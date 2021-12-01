@@ -120,6 +120,7 @@ const RightButton = styled(LeftButton)`
 const DownArrow = styled.div`
 animation: animateDown infinite 1.5s;
 overflow-x: hidden;
+text-align:center;
 `
 // Wraps buttons and arrow, to save formatting. 
 const Buttons = styled.div`
